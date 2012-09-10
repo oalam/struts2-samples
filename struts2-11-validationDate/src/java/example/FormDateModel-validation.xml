@@ -1,0 +1,82 @@
+<!--
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+-->
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://localhost:8084/exemple-11/example/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+  <field name="date1" >
+    <field-validator type="requiredstring" short-circuit="true">
+      <message key="date1.error"/>
+    </field-validator>
+    <field-validator type="regex" short-circuit="true">
+      <param name="expression">^\d{2}/\d{2}/\d{4}$</param>
+      <param name="trim">true</param>
+      <message key="date1.error"/>
+    </field-validator>
+  </field>
+
+  <field name="date2" >
+    <field-validator type="required" short-circuit="true">
+      <message key="date2.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="date2.error"/>
+    </field-validator>
+   </field>
+
+  <field name="date3" >
+    <field-validator type="required" short-circuit="true">
+      <message key="date2.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="date3.error"/>
+    </field-validator>
+    <field-validator type="date" short-circuit="true">
+      <param name="min">18/05/2000</param>
+      <message key="date3.error"/>
+    </field-validator>
+  </field>
+
+  <field name="date4" >
+    <field-validator type="required" short-circuit="true">
+      <message key="date2.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="date4.error"/>
+    </field-validator>
+    <field-validator type="date" short-circuit="true">
+      <param name="max">20/06/2001</param>
+      <message key="date4.error"/>
+    </field-validator>
+  </field>
+
+ <field name="date5" >
+    <field-validator type="required" short-circuit="true">
+      <message key="date2.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="date5.error"/>
+    </field-validator>
+    <field-validator type="date" short-circuit="true">
+      <param name="min">18/05/2000</param>
+      <param name="max">20/06/2001</param>
+      <message key="date5.error"/>
+    </field-validator>
+  </field>
+
+  <field name="date6" >
+    <field-validator type="requiredstring" short-circuit="true">
+      <message key="date6.error"/>
+    </field-validator>
+    <field-validator type="regex" short-circuit="true">
+      <param name="expression">^\d{2}/\d{2}/\d{4}$</param>
+      <param name="trim">true</param>
+      <message key="date6.error"/>
+    </field-validator>
+  </field>
+
+</validators>

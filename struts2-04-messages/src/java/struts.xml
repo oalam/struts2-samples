@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <!-- internationalisation -->
+  <constant name="struts.custom.i18n.resources" value="messages" />
+  <!-- package default -->
+  <package name="default" namespace="/" extends="struts-default">
+    <default-action-ref name="index" />
+    <action name="index">
+      <result type="redirectAction">
+        <param name="actionName">Action1</param>
+        <param name="namespace">/actions</param>
+      </result>
+    </action>
+  </package>
+  <!-- package actions -->
+  <package name="actions" namespace="/actions" extends="struts-default">
+    <action name="Action1">
+      <result name="success">/vues/Page1.jsp</result>
+    </action>
+  </package>
+</struts>

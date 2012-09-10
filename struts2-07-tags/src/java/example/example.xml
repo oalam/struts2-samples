@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="example" namespace="/example" extends="struts-default">
+	<action name="Form" class="example.Form">
+	    <result name="success">/example/Form.jsp</result>
+	</action>
+	<action name="Form1" class="example.Form1">
+	    <result name="success">/example/Form1.jsp</result>
+	</action>
+	<action name="Form2" class="example.Form2">
+	    <result name="success">/example/Form2.jsp</result>
+	</action>
+    </package>
+</struts>

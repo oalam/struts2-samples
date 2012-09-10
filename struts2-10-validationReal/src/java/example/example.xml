@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <package name="example" namespace="/example" extends="struts-default">
+    <action name="Accueil">
+      <result name="success">/example/Accueil.jsp</result>
+    </action>
+    <action name="FormDouble" class="example.FormDouble">
+      <result name="input">/example/FormDouble.jsp</result>
+      <result name="cancel" type="redirect">/example/Accueil.jsp</result>
+      <result name="success">/example/ConfirmationFormDouble.jsp</result>
+    </action>
+  </package>
+</struts>
+

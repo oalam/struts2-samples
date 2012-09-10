@@ -1,0 +1,82 @@
+<!--
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+-->
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://localhost:8084/exemple-10/example/xwork-validator-1.0.2.dtd">
+
+
+<validators>
+
+  <field name="double1" >
+    <field-validator type="requiredstring" short-circuit="true">
+      <message key="double1.error"/>
+    </field-validator>
+    <field-validator type="regex" short-circuit="true">
+      <param name="expression">^[+|-]*\s*\d+(,\d+)*$</param>
+      <param name="trim">true</param>
+      <message key="double1.error"/>
+    </field-validator>
+  </field>
+
+  <field name="double2" >
+    <field-validator type="required" short-circuit="true">
+      <message key="double2.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="double2.error"/>
+    </field-validator>
+  </field>
+
+  <field name="double3" >
+    <field-validator type="required" short-circuit="true">
+      <message key="double3.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="double3.error"/>
+    </field-validator>
+    <field-validator type="double" short-circuit="true">
+      <param name="minInclusive">2.64</param>
+      <message key="double3.error"/>
+    </field-validator>
+  </field>
+
+  <field name="double4" >
+    <field-validator type="required" short-circuit="true">
+      <message key="double4.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="double4.error"/>
+    </field-validator>
+    <field-validator type="double" short-circuit="true">
+      <param name="maxExclusive">8.32</param>
+      <message key="double4.error"/>
+    </field-validator>
+  </field>
+
+  <field name="double5" >
+    <field-validator type="required" short-circuit="true">
+      <message key="double5.error"/>
+    </field-validator>
+    <field-validator type="conversion" short-circuit="true">
+      <message key="double5.error"/>
+    </field-validator>
+    <field-validator type="double" short-circuit="true">
+      <param name="minInclusive">2.64</param>
+      <param name="maxExclusive">8.32</param>
+      <message key="double5.error"/>
+    </field-validator>
+  </field>
+
+  <field name="double6" >
+    <field-validator type="requiredstring" short-circuit="true">
+      <message key="double6.error"/>
+    </field-validator>
+    <field-validator type="regex" short-circuit="true">
+      <param name="expression">^[+|-]*\s*\d+(,\d+)*$</param>
+      <param name="trim">true</param>
+      <message key="double6.error"/>
+    </field-validator>
+  </field>
+</validators>

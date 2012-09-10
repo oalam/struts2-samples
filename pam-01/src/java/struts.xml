@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <!-- internationalisation -->
+  <constant name="struts.custom.i18n.resources" value="messages" />
+  <!-- intégration Spring -->
+  <constant name="struts.objectFactory.spring.autoWire" value="name" />
+
+  
+  <!-- actions Struts /Tiles -->
+  <package name="default" namespace="/" extends="tiles-default">
+    <!-- action par défaut -->
+    <default-action-ref name="index" />
+    <action name="index">
+      <result type="redirectAction">
+        <param name="actionName">Formulaire!input</param>
+        <param name="namespace">/</param>
+      </result>
+    </action>
+    <!-- action Formulaire -->
+    <action name="Formulaire" class="web.actions.Formulaire">
+      <result name="success" type="tiles">saisie</result>
+      <result name="exception" type="tiles">exception</result>
+      <result name="input" type="tiles">saisie</result>
+      <result name="simulation" type="tiles">simulation</result>
+    </action>
+   <!-- action EnregistrerSimulation -->
+    <action name="EnregistrerSimulation" class="web.actions.Enregistrer" method="execute">
+      <result name="error" type="tiles">erreur</result>
+      <result name="simulations" type="tiles">simulations</result>
+    </action>
+   <!-- action RetourFormulaire -->
+    <action name="RetourFormulaire" >
+      <result type="redirectAction">
+        <param name="actionName">Formulaire!input</param>
+        <param name="namespace">/</param>
+      </result>
+    </action>
+   <!-- action VoirSimulations -->
+    <action name="VoirSimulations" class="web.actions.Voir">
+      <result name="success" type="tiles">simulations</result>
+    </action>
+   <!-- action RetirerSimulation -->
+    <action name="SupprimerSimulation" class="web.actions.Supprimer">
+      <result name="erreur" type="tiles">erreur</result>
+      <result name="simulations" type="tiles">simulations</result>
+    </action>
+   <!-- action TerminerSession -->
+    <action name="TerminerSession" class="web.actions.Terminer">
+      <result name="success" type="redirectAction">
+        <param name="actionName">Formulaire!input</param>
+        <param name="namespace">/</param>
+      </result>
+    </action>
+  </package>
+
+    <!-- Add packages here -->
+
+</struts>

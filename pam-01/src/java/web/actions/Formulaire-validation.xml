@@ -1,0 +1,38 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+
+<validators>
+  
+  <field name="heuresTravaillees" >
+    <field-validator type="required" short-circuit="true">
+      <message key="heuresTravaillées.error"/>
+    </field-validator>
+    
+    <field-validator type="conversion" short-circuit="true">
+      <message key="heuresTravaillées.error"/>
+    </field-validator>
+    
+    <field-validator type="double" short-circuit="true">
+      <param name="minInclusive">0</param>
+      <param name="maxInclusive">300</param>
+      <message key="heuresTravaillées.error"/>
+    </field-validator>
+  </field>
+  
+  <field name="joursTravailles" >
+    <field-validator type="required" short-circuit="true">
+      <message key="joursTravaillés.error"/>
+    </field-validator>
+    
+    <field-validator type="conversion" short-circuit="true">
+      <message key="joursTravaillés.error"/>
+    </field-validator>
+    
+    <field-validator type="int" short-circuit="true">
+      <param name="min">0</param>
+      <param name="max">31</param>
+      <message key="joursTravaillés.error"/>
+    </field-validator>
+  </field>
+  
+</validators>

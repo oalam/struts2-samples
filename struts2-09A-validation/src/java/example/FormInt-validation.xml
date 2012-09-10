@@ -1,0 +1,81 @@
+<!--
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+-->
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//
+EN" "http://localhost:8084/exemple-09/example/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+    <field name="int1" >
+	<field-validator type="requiredstring" short-circuit="true">
+	    <message key="int1.error"/>
+	</field-validator>
+	<field-validator type="regex" short-circuit="true">
+	    <param name="expression">^\d{2}$</param>
+	    <param name="trim">true</param>
+	    <message key="int1.error"/>
+	</field-validator>
+    </field>
+
+    <field name="int2" >
+	<field-validator type="required" short-circuit="true">
+	    <message key="int2.error"/>
+	</field-validator>
+	<field-validator type="conversion" short-circuit="true">
+	    <message key="int2.error"/>
+	</field-validator>
+    </field>
+
+    <field name="int3" >
+	<field-validator type="required" short-circuit="true">
+	    <message key="int3.error"/>
+	</field-validator>
+	<field-validator type="conversion" short-circuit="true">
+	    <message key="int2.error"/>
+	</field-validator>
+	<field-validator type="int" short-circuit="true">
+	    <param name="min">-1</param>
+	    <message key="int3.error"/>
+	</field-validator>
+    </field>
+
+    <field name="int4" >
+	<field-validator type="required" short-circuit="true">
+	    <message key="int4.error"/>
+	</field-validator>
+	<field-validator type="conversion" short-circuit="true">
+	    <message key="int2.error"/>
+	</field-validator>
+	<field-validator type="int" short-circuit="true">
+	    <param name="max">10</param>
+	    <message key="int4.error"/>
+	</field-validator>
+    </field>
+  
+    <field name="int5" >
+	<field-validator type="required" short-circuit="true">
+	    <message key="int5.error"/>
+	</field-validator>
+	<field-validator type="conversion" short-circuit="true">
+	    <message key="int2.error"/>
+	</field-validator>
+	<field-validator type="int" short-circuit="true">
+	    <param name="min">1</param>
+	    <param name="max">10</param>
+	    <message key="int5.error"/>
+	</field-validator>
+    </field>
+  
+    <field name="int6" >
+	<field-validator type="requiredstring" short-circuit="true">
+	    <message key="int6.error"/>
+	</field-validator>
+	<field-validator type="regex" short-circuit="true">
+	    <param name="expression">^\d{1,2}$</param>
+	    <param name="trim">true</param>
+	    <message key="int6.error"/>
+	</field-validator>
+    </field>
+</validators>
